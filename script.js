@@ -1,27 +1,31 @@
 $(document).ready(function() {
 
   var HORIZONTAL = false;   // `false` for vertical (column) chart, `true` for horizontal bar
-  var STACKED = false;  // `false` for individual bars, `true` for stacked bars
+  var STACKED = true;  // `false` for individual bars, `true` for stacked bars
 
-  var TITLE = 'English Learners by Select School Districts in Connecticut, 2018-19';
+  var TITLE = 'Probability of winning n games in a row given that the probability of winning a single game in Diamond III is 54%';
 
   var LABELS = 'district';  // Column to define 'bucket' names (x axis)
 
   var SERIES = [  // For each column representing a series, define its name and color
     {
       column: 'nonlearner',
-      name: 'Non-Learners',
-      color: 'grey'
+      name: 'Non-Learner',
+      color: '#40a8c3',
+      radio : 0,
+      //type: 'bar'
     },
     {
       column: 'learner',
       name: 'Learners',
-      color: 'blue'
+      color: '#f2eded',
+      type: 'line',
+      radius: 0,
     }
   ];
 
-  var X_AXIS = 'School Districts';  // x-axis label and label in tooltip
-  var Y_AXIS = 'Number of Enrolled Students'; // y-axis label and label in tooltip
+  var X_AXIS = 'Number of games won';  // x-axis label and label in tooltip
+  var Y_AXIS = 'Probability of winning x amount of games'; // y-axis label and label in tooltip
 
   var SHOW_GRID = true; // `true` to show the grid, `false` to hide
   var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
@@ -34,7 +38,9 @@ $(document).ready(function() {
         label: el.name,
         labelDirty: el.column,
         backgroundColor: el.color,
-        data: []
+        type: el.type,
+        data: [],
+        radius: el.radius,
       }
     });
 
@@ -52,7 +58,7 @@ $(document).ready(function() {
     var ctx = document.getElementById('container').getContext('2d');
 
     new Chart(ctx, {
-      type: HORIZONTAL ? 'horizontalBar' : 'bar',
+      type: 'bar', //HORIZONTAL ? 'horizontalBar' : 'bar', 
       data: barChartData,
       
       options: {

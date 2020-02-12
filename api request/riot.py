@@ -3,8 +3,6 @@ import csv
 import requests
 import timeit
 
-#api_key = "RGAPI-90016878-a351-48cf-a859-845d0deb8ff1"
-
 def getQueryLeagueExp(league, division, api_key):
     oldData = []
     pageNum = 1
@@ -23,7 +21,10 @@ def getQueryLeagueExp(league, division, api_key):
         c.writerow([r[x]['wins'], r[x]['losses']])
 
 API_KEY = 'RGAPI-8b34f9fd-4b18-477c-903e-1b2520a85f0c'
-start = timeit.default_timer()
+# time complexity analysis check
+# make sure that the time complexity does not exceed linear time
+# uncheck next comments to test time complexity
+# start = timeit.default_timer()
 getQueryLeagueExp('DIAMOND', 'III', API_KEY)
-stop = timeit.default_timer()
-print('Time: ', stop - start) 
+# stop = timeit.default_timer()
+# print('Time: ', stop - start) 
