@@ -1,31 +1,33 @@
 $(document).ready(function() {
 
   var HORIZONTAL = false;   // `false` for vertical (column) chart, `true` for horizontal bar
-  var STACKED = true;  // `false` for individual bars, `true` for stacked bars
+  var STACKED = false;  // `false` for individual bars, `true` for stacked bars
 
-  var TITLE = 'Probability of winning n games in a row given that the probability of winning a single game in Diamond III is 54%';
+  var TITLE = 'Distribution of gold per min per summoner in your elo';
 
   var LABELS = 'district';  // Column to define 'bucket' names (x axis)
 
   var SERIES = [  // For each column representing a series, define its name and color
     {
       column: 'nonlearner',
-      name: 'Non-Learner',
+      name: 'Total gold per min',
       color: '#40a8c3',
-      radio : 0,
-      //type: 'bar'
+      radius: 0,
+      order: 1,
+      type: 'line'
     },
     {
       column: 'learner',
-      name: 'Learners',
-      color: '#f2eded',
+      name: 'Your gold per min',
+      color: 'red',
       type: 'line',
       radius: 0,
+      order: 5,
     }
   ];
 
-  var X_AXIS = 'Number of games won';  // x-axis label and label in tooltip
-  var Y_AXIS = 'Probability of winning x amount of games'; // y-axis label and label in tooltip
+  var X_AXIS = 'Gold per min';  // x-axis label and label in tooltip
+  var Y_AXIS = 'Probability density'; // y-axis label and label in tooltip
 
   var SHOW_GRID = true; // `true` to show the grid, `false` to hide
   var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
@@ -41,6 +43,7 @@ $(document).ready(function() {
         type: el.type,
         data: [],
         radius: el.radius,
+        order: el.order
       }
     });
 
