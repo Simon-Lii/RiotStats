@@ -3,25 +3,31 @@ $(document).ready(function() {
   var HORIZONTAL = false;   // `false` for vertical (column) chart, `true` for horizontal bar
   var STACKED = false;  // `false` for individual bars, `true` for stacked bars
 
-  var TITLE = 'English Learners by Select School Districts in Connecticut, 2018-19';
+  var TITLE = 'Distribution of gold per min per summoner in your elo';
 
   var LABELS = 'district';  // Column to define 'bucket' names (x axis)
 
   var SERIES = [  // For each column representing a series, define its name and color
     {
       column: 'nonlearner',
-      name: 'Non-Learners',
-      color: 'grey'
+      name: 'Total gold per min',
+      color: 'green',
+      radius: 0,
+      order: 1,
+      type: 'line'
     },
     {
       column: 'learner',
-      name: 'Learners',
-      color: 'blue'
+      name: 'Your gold per min',
+      color: 'red',
+      type: 'line',
+      radius: 0,
+      order: 5,
     }
   ];
 
-  var X_AXIS = 'School Districts';  // x-axis label and label in tooltip
-  var Y_AXIS = 'Number of Enrolled Students'; // y-axis label and label in tooltip
+  var X_AXIS = 'Gold per min';  // x-axis label and label in tooltip
+  var Y_AXIS = 'Probability density'; // y-axis label and label in tooltip
 
   var SHOW_GRID = true; // `true` to show the grid, `false` to hide
   var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
@@ -34,7 +40,10 @@ $(document).ready(function() {
         label: el.name,
         labelDirty: el.column,
         backgroundColor: el.color,
-        data: []
+        type: el.type,
+        data: [],
+        radius: el.radius,
+        order: el.order
       }
     });
 
@@ -52,7 +61,7 @@ $(document).ready(function() {
     var ctx = document.getElementById('container').getContext('2d');
 
     new Chart(ctx, {
-      type: HORIZONTAL ? 'horizontalBar' : 'bar',
+      type: 'bar', //HORIZONTAL ? 'horizontalBar' : 'bar', 
       data: barChartData,
       
       options: {
