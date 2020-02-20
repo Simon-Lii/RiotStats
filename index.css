@@ -1,39 +1,115 @@
-* {
-    box-sizing: border-box; 
+
+body, html{
+    background-color: #f3f3f3;
+    height: 100%;
   }
-  body {
+
+  /*---------------------------------------Header--------------------------------------------------*/
+  header{
+    background-color: #1f3963;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  #main-heading{
+    /* background-color: darkslateblue; */
+    color: rgb(247, 204, 120);
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-variant: small-caps;
+    font-style: oblique;
+    font-size: 70px;
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  nav{
+    text-align: center;
+  }
+  #main-nav{
+    /* background-color: darkturquoise; */
+    display: inline-flex;
+  }
+
+  #main-nav li{
+    margin: 5px 10px;
+    font-size: 20px;
+    color: lightseagreen;
+  }
+  /*---------------------------------------Header--------------------------------------------------*/
+
+  /*---------------------------------------Main--------------------------------------------------*/
+  main{
     display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    margin: 0;
+    min-height:70%;
   }
-  #main {
-    display: flex;
-    flex: 1;
+
+  section{
+    text-align: center;
   }
-  #main > article {
-    flex: 1;
-    order: 1;
+
+  .side-section{  
+    width: 15%;
+    max-width: 15%;
   }
-  #main > nav, 
-  #main > aside {
-    flex: 0 0 20vw;
+
+  .side-section div{
+    height: 50%;
   }
-  #main > nav {
-    background: #D7E8D4;
-    order: 3;
+
+  #middle-section{
+    width: 70%;
+    max-height: 76%;
   }
-  #main > aside {
-    background: beige;
-    order: 2;
+
+  .content{
+
   }
-  header, footer {
-    background: yellowgreen;
-    height: 20vh;
+
+  .title{
+    /* background-color: darkseagreen; */
+    color: goldenrod;
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    padding: 20px 0;
   }
-  header, footer, article, nav, aside {
-    padding: 1em;
+
+  .search-bar{
+    padding: 10px;
   }
-  .flex-container {
-    display: flex;
+
+  #search{
+    background-color: rgb(186, 187, 187);
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    border: rgb(186, 187, 187);
+    outline: none;
   }
+
+  .carousel{
+    padding: 20px 20px;
+  }
+
+  .carousel div{
+    background-color: rgba(212, 202, 189, 0.966);
+    display: inline-flex;
+    padding: 35px 70px;
+    margin: 0 30px;
+    border-radius: 10px;
+  }
+
+  .graph{
+    /* background-color: rgb(219, 219, 219); */
+    padding: 20px 20px;
+  }
+  /*---------------------------------------Main--------------------------------------------------*/
+
+  /*---------------------------------------Footer--------------------------------------------------*/
+
+  footer{
+    background-color: #a6a8ac;    
+    height: 10%;
+
+  }
+  /*---------------------------------------Footer--------------------------------------------------*/

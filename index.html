@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <title>Chart.js Bar Chart Template by DataVizForAll.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
     <!-- Load jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
@@ -15,121 +15,6 @@
     <!-- Load D3.js to read csv files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
   </head>
-  <style>
-    body, html{
-      background-color: #192231;
-      height: 100%;
-    }
-
-    /*---------------------------------------Header--------------------------------------------------*/
-    header{
-      background-color: #0d141f;
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    #main-heading{
-      /* background-color: darkslateblue; */
-      color: rgb(219, 215, 207);
-      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-      font-size: 70px;
-      display: inline-block;
-      padding: 10px 0;
-    }
-
-    nav{
-      text-align: center;
-    }
-    #main-nav{
-      /* background-color: darkturquoise; */
-      display: inline-flex;
-    }
-
-    #main-nav li{
-      margin: 5px 10px;
-      font-size: 20px;
-      color: lightseagreen;
-    }
-    /*---------------------------------------Header--------------------------------------------------*/
-
-    /*---------------------------------------Main--------------------------------------------------*/
-    main{
-      display: flex;
-      min-height:70%;
-    }
-
-    section{
-      text-align: center;
-    }
-
-    .side-section{  
-      width: 15%;
-      max-width: 15%;
-    }
-
-    .side-section div{
-      height: 50%;
-    }
-
-    #middle-section{
-      background-color: #40a8c3;
-      width: 70%;
-      max-height: 76%;
-    }
-
-    .content{
-
-    }
-
-    .title{
-      /* background-color: darkseagreen; */
-      color: goldenrod;
-      font-family: OCR A Std, monospace;
-      font-size: 40px;
-      padding: 20px 0;
-    }
-
-    .search-bar{
-      padding: 10px;
-    }
-
-    #search{
-      background-color: rgb(186, 187, 187);
-      margin: auto;
-      width: 30%;
-      padding: 10px;
-      border-radius: 10px;
-      border: rgb(186, 187, 187);
-      outline: none;
-    }
-
-    .carousel{
-      padding: 20px 20px;
-    }
-
-    .carousel div{
-      background-color: rgba(212, 202, 189, 0.966);
-      display: inline-flex;
-      padding: 35px 70px;
-      margin: 0 30px;
-      border-radius: 10px;
-    }
-
-    .graph{
-      /* background-color: rgb(219, 219, 219); */
-      padding: 20px 20px;
-    }
-    /*---------------------------------------Main--------------------------------------------------*/
-
-    /*---------------------------------------Footer--------------------------------------------------*/
-
-    footer{
-      background-color: #14243f;    
-      height: 10%;
-
-    }
-    /*---------------------------------------Footer--------------------------------------------------*/
-  </style>
   <body>
     <header>
       <div id="main-heading">
@@ -166,10 +51,10 @@
           <div>Div</div>
           <div>Div</div>
           <div>Div</div>
-      </div>
-      <div class="graph">
-        <canvas id="container" style="width:25%; height:100px;"></canvas>
-      </div>
+        </div>
+        <div class="graph">
+          <canvas id="container" style="width:50%; height:200px;"></canvas>
+        </div>
       </section>
       <section class="side-section">
         <div>

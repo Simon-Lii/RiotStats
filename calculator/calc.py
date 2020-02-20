@@ -113,8 +113,6 @@ def winRatioPerSummoner(league, division, winRatio):
     #print(std_dev)
     #print(mean)
 
-
-
 def binomialDistribution(winRatio):
     n = 10    # total
     p = winRatio / 100     # Probability
